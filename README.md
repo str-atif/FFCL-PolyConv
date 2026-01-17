@@ -8,8 +8,11 @@
 
 ---
 ## Preview
+<p align="center">
+  <img src="https://github.com/str-atif/FFCL-PolyConv/blob/main/7d4e4755-8ba8-4faf-8414-47d31e7c64e6.png?raw=true" width="620">
+</p>
+---
 
-![Err](7d4e4755-8ba8-4faf-8414-47d31e7c64e6.png)
 ## Features
 
 - Supports input formats: `.fbx`, `.obj`, `.glb`, `.gltf`
@@ -38,7 +41,7 @@
 
 ---
 
-## ▶ Usage
+## ➤ Usage
 
 ```bash
 blender.exe --background --python FreeFayer.py
