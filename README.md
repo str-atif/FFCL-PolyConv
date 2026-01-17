@@ -7,7 +7,9 @@
 **FreeFayer Low-Poly Converter** is a command-line Blender automation tool designed to convert high-poly 3D assets into mobile-optimized FBX models, mainly for **Free Fire Craftland** and other low-end mobile games.
 
 ---
+## Preview
 
+![Err](7d4e4755-8ba8-4faf-8414-47d31e7c64e6.png)
 ## Features
 
 - Supports input formats: `.fbx`, `.obj`, `.glb`, `.gltf`
