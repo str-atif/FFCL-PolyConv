@@ -44,7 +44,7 @@
 ## ➤ Usage
 
 ```bash
-blender.exe --background --python FreeFayer.py
+&"C:\Program Files\Blender Foundation\Blender 5.0\blender.exe" --background --python FreeFayer.py
 ```
 You will be prompted to enter:
 - Input 3D model path
