@@ -2,52 +2,103 @@
   <img src="https://dl.dir.freefiremobile.com/common/OB51/CSH/CraftlandIcon/CRAFTLAND_STUDIO_LOGO.png" width="220">
 </p>
 
-# FreeFayer Low-Poly Converter (FreeFayer.py)
+<h1 align="center">FreeFayer Low-Poly Converter</h1>
 
-**FreeFayer Low-Poly Converter** is a command-line Blender automation tool designed to convert high-poly 3D assets into mobile-optimized FBX models, mainly for **Free Fire Craftland** and other low-end mobile games.
+<p align="center">
+  <strong>
+    Blender automation tool to create mobile-optimized low-poly FBX files<br>
+    mainly for Free Fire Craftland and other low-end mobile games
+  </strong>
+</p>
+
+<br>
+
+<p align="center">
+  <img src="https://github.com/str-atif/FFCL-PolyConv/blob/main/7d4e4755-8ba8-4faf-8414-47d31e7c64e6.png?raw=true" width="720">
+</p>
+
+<br>
 
 ---
-## Preview
-<p align="center">
-  <img src="https://github.com/str-atif/FFCL-PolyConv/blob/main/7d4e4755-8ba8-4faf-8414-47d31e7c64e6.png?raw=true" width="620">
-</p>
+
+## Version
+
+**1.1.0 — Command-line driven release**  
+*012126*
+
+> This version removes interactive prompts and introduces proper CLI arguments,  
+> making the tool suitable for automation, batch processing, and headless Blender usage.
+
 ---
 
 ## Features
 
-- Supports input formats: `.fbx`, `.obj`, `.glb`, `.gltf`
+- Supported input formats: `.fbx`, `.obj`, `.glb`, `.gltf`
 - Always exports optimized `.fbx` files
-- Automatic polygon and vertex reduction
-- Building-safe geometry optimization (prevents wall and shape distortion)
-- Hard triangle limit per mesh
-- Flat shading for architectural models
-- Mesh merging for improved rendering performance (FPS)
+- Fully command-line driven (no interactive prompts)
+- Automatic triangle reduction with configurable hard limit
+- Safe geometry cleanup:
+  - Merge by distance
+  - Delete loose geometry
+  - Recalculate normals
+- Temporary scale normalization during processing to prevent numeric instability
+- Flat shading applied automatically (ideal for architectural & prop assets)
+- Optional mesh joining when multiple objects are present
 - No external Python dependencies required
-- Helps avoid map rejection caused by high-poly assets
+- Designed to help avoid Craftland map rejections caused by high-poly assets
 
 ---
 
-## 📦 Requirements
+## Requirements
 
-- Blender **5.0+**
-- Windows **10 / 11**
-
----
-
-## ⚙️ Installation
-
-1. Clone or download this repository.
-2. Place `FreeFayer.py` in any directory on your system.
+- Blender **4.0+**  
+  *(Recommended: 4.2 or newer)*
+- Windows / Linux / macOS
 
 ---
 
-## ➤ Usage
+## Installation
 
-```bash
-&"C:\Program Files\Blender Foundation\Blender 5.0\blender.exe" --background --python FreeFayer.py
+1. Download or clone this repository.
+2. Place `FreeFayer.py` anywhere on your system.  
+   No installation or `pip` setup required — only the Blender executable.
+
+---
+
+## Usage
+
+Run in **headless / background mode** (recommended):
+
+### Windows
+
+```bat
+"C:\Program Files\Blender Foundation\Blender 4.2\blender.exe" ^
+  --background ^
+  --python FreeFayer.py ^
+  -- ^
+  --input "C:\models\my_house.fbx" ^
+  --max-tris 4200
 ```
-You will be prompted to enter:
-- Input 3D model path
-- Output file name (without extension)
+##Linux / macOS
+```bash
+/Applications/Blender.app/Contents/MacOS/Blender \
+  --background \
+  --python ./FreeFayer.py \
+  -- \
+  --input ./character.glb \
+  --output char_lowpoly \
+  --max-tris 2800
+```
 
-The optimized file will be saved as: `{output_name}.fbx`
+# Quick Examples
+# Basic usage – default 4000 triangle limit
+--input building.obj
+
+## Custom output name
+--input pistol.fbx --output pistol_low
+
+## Aggressive optimization for small props
+--input lamp.glb --max-tris 900
+
+## Medium-sized prop / weapon
+--input ak47.fbx --max-tris 3200
