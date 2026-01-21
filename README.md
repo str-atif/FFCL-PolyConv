@@ -13,9 +13,8 @@
 
 <br>
 
-<p align="center">
-  <img src="https://github.com/str-atif/FFCL-PolyConv/blob/main/7d4e4755-8ba8-4faf-8414-47d31e7c64e6.png?raw=true" width="720">
-</p>
+<img width="801" height="674" alt="image" src="https://github.com/user-attachments/assets/444af878-61d8-487c-a32d-facedb265394" />
+
 
 <br>
 
